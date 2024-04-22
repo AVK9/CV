@@ -11,11 +11,15 @@ export const Input = styled.input`
   margin-top: 8px;
   border-radius: 10px;
   padding: 18px 18px 18px 68px;
-  width: 360px;
+  width: 280px;
   height: 56px;
   background: var(--inputs);
   outline: none;
   border: none;
+
+  @media only screen and (min-width: 768px) {
+    width: 360px;
+  }
 `;
 
 export const IconWrapper = styled.svg`

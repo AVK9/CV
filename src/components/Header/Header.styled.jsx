@@ -2,13 +2,16 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
-  padding: 10px;
   background-color: #f7f7f7;
   box-shadow: 0 0 10px #8a8a8a;
   transition:
     color 0.3s,
     text-shadow 0.3s;
   display: flex;
+
+  padding: 5px 0px 5px 0px;
+  margin: 0 auto;
+
   justify-content: center;
   align-items: center;
   width: 100vw;
