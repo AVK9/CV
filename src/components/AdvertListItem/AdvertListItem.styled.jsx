@@ -60,6 +60,7 @@ export const PriceBox = styled.div`
   @media only screen and (min-width: 768px) {
     width: 100%;
     flex-direction: row;
+    justify-content: flex-end;
   }
 `;
 export const Price = styled.span`
