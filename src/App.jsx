@@ -1,10 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import Layout from 'components/Layout/Layout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-import { AppWrapper } from './App.styled';
+import { Loader } from './components/Loader/Loader';
 
 const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
@@ -13,31 +12,16 @@ const FavoritesPage = lazy(() => import('pages/FavoritesPage/FavoritesPage'));
 
 function App() {
   return (
-    <AppWrapper>
+    <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
-          <Route path="*" element={<ErrorPage />} />
         </Route>
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
-      <ToastContainer autoClose={3000} />
-    </AppWrapper>
+    </Suspense>
   );
 }
 export default App;
-
-{
-  /* <Suspense fallback={<Loader />}>
-  <Routes>
-    <Route path="/" element={<Layout />}>
-      <Route index element={<Home />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/contacts" element={<Phonebook />} />
-    </Route>
-    <Route path="*" element={<h1>404</h1>} />
-  </Routes>
-</Suspense>; */
-}

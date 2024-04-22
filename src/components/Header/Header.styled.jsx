@@ -8,16 +8,16 @@ export const HeaderContainer = styled.div`
   transition:
     color 0.3s,
     text-shadow 0.3s;
-  /* margin-bottom: 40px; */
   display: flex;
-  gap: 250px;
-  justify-content: center;
+  /* flex-wrap: wrap; */
   align-items: center;
-  height: 100px;
+  /* height: 100px; */
+  width: 100vw;
 `;
 export const BoxLogo = styled.div`
   border-right: 2px solid black;
-  width: 150px;
+  width: 100px;
+  height: 70px;
   display: flex;
   gap: 30px;
 `;
@@ -29,19 +29,19 @@ export const BoxName = styled.div`
 `;
 export const Name = styled.span`
   margin-top: 8px;
-  width: 150px;
+  width: 100px;
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 35px;
+  font-size: 25px;
   line-height: 125%;
   color: var(--main);
   letter-spacing: 1px;
 `;
 export const NamePart = styled.div`
-  width: 130px;
+  width: 100px;
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 25px;
+  font-size: 15px;
   line-height: 125%;
   color: var(--main);
   text-align: center;
@@ -56,17 +56,17 @@ export const StyledElement = styled.div`
     display: flex;
     align-items: center;
 
-    top: 13px;
+    top: 8px;
     bottom: 0;
-    height: 3px;
-    width: 15px;
+    height: 2px;
+    width: 20px;
     background-color: #000;
   }
   &:before {
-    left: -5px;
+    left: 0px;
   }
   &:after {
-    right: -5px;
+    right: 0px;
   }
 `;
 
@@ -75,6 +75,9 @@ export const Navigation = styled.nav`
   justify-content: center;
   align-items: center;
   gap: 25px;
+  @media only screen and (min-width: 768px) {
+    margin-top: 15px;
+  }
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -88,5 +91,16 @@ export const StyledLink = styled(NavLink)`
   }
   &.active {
     color: var(--button);
+  }
+`;
+
+export const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 170px;
   }
 `;
