@@ -9,10 +9,12 @@ export const HeaderContainer = styled.div`
     color 0.3s,
     text-shadow 0.3s;
   display: flex;
-  /* flex-wrap: wrap; */
+  justify-content: center;
   align-items: center;
-  /* height: 100px; */
   width: 100vw;
+  @media only screen and (min-width: 768px) {
+    justify-content: start;
+  }
 `;
 export const BoxLogo = styled.div`
   border-right: 2px solid black;
@@ -76,7 +78,7 @@ export const Navigation = styled.nav`
   align-items: center;
   gap: 25px;
   @media only screen and (min-width: 768px) {
-    margin-top: 15px;
+    margin-top: 20px;
   }
 `;
 
