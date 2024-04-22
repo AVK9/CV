@@ -6,21 +6,27 @@ import {
   HeaderContainer,
   Navigation,
   BoxLogo,
+  StyledElement,
+  StyledLink,
 } from './Header.styled';
 import logo from '../../assets/img/logo.svg';
 export const Header = () => {
   return (
     <HeaderContainer>
-      <BoxLogo>
-        <img src={logo} alt="Camper for you" />
-        <BoxName>
-          <Name>CAMPER</Name>
-          <NamePart>FOR YOU</NamePart>
-        </BoxName>
-      </BoxLogo>
+      <Link to={'/'}>
+        <BoxLogo>
+          <img src={logo} alt="Camper for you" />
+          <BoxName>
+            <Name>CAMPER</Name>
+            <StyledElement>
+              <NamePart>FOR YOU</NamePart>
+            </StyledElement>
+          </BoxName>
+        </BoxLogo>
+      </Link>
       <Navigation>
-        <Link to="/catalog">Catalog</Link>
-        <Link to="/favorites">Favorites</Link>
+        <StyledLink to="/catalog">Catalog</StyledLink>
+        <StyledLink to="/favorites">Favorites</StyledLink>
       </Navigation>
     </HeaderContainer>
   );
