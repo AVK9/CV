@@ -1,4 +1,4 @@
-import{h as o,u as i,j as t}from"./index-283c13db.js";const a="/CV/assets/3-51df8639.png",n="/CV/assets/1-6d7913ac.png",s="/CV/assets/6-363b835c.png",e=o`
+import{h as o,u as i,j as t}from"./index-7d7f0d7b.js";const a="/CV/assets/3-51df8639.png",n="/CV/assets/1-6d7913ac.png",s="/CV/assets/6-363b835c.png",e=o`
   0%, 100% {
     opacity: 0;
   }
