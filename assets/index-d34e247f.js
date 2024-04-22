@@ -93,10 +93,12 @@ Error generating stack: `+i.message+`
     color 0.3s,
     text-shadow 0.3s;
   display: flex;
-  /* flex-wrap: wrap; */
+  justify-content: center;
   align-items: center;
-  /* height: 100px; */
   width: 100vw;
+  @media only screen and (min-width: 768px) {
+    justify-content: start;
+  }
 `,vC=Ce.div`
   border-right: 2px solid black;
   width: 100px;
@@ -153,7 +155,7 @@ Error generating stack: `+i.message+`
   align-items: center;
   gap: 25px;
   @media only screen and (min-width: 768px) {
-    margin-top: 15px;
+    margin-top: 20px;
   }
 `,jp=Ce(H1)`
   font-family: var(--font-family);
@@ -278,7 +280,7 @@ to {
   animation: ${GC} 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
 `;Ce.svg`
   transform-origin: 50% 65%;
-`;const YC=()=>T.jsx(T.Fragment,{children:T.jsx(HC,{height:"100",width:"100",color:"#9ebbff",ariaLabel:"bars-loading",wrapperClass:"",visible:!0,wrapperStyle:{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%, -50%)"}})}),qC=R.lazy(()=>xl(()=>import("./ErrorPage-7ebcd01e.js"),[])),XC=R.lazy(()=>xl(()=>import("./HomePage-29e148ec.js"),[])),JC=R.lazy(()=>xl(()=>import("./CatalogPage-8b3a381b.js"),["assets/CatalogPage-8b3a381b.js","assets/Filters-274d1df2.js","assets/Filters-b8d97615.css"])),ZC=R.lazy(()=>xl(()=>import("./FavoritesPage-43640777.js"),["assets/FavoritesPage-43640777.js","assets/Filters-274d1df2.js","assets/Filters-b8d97615.css"]));function e_(){return T.jsx(R.Suspense,{fallback:T.jsx(YC,{}),children:T.jsxs(j1,{children:[T.jsxs(Qn,{path:"/",element:T.jsx(LC,{}),children:[T.jsx(Qn,{index:!0,element:T.jsx(XC,{})}),T.jsx(Qn,{path:"/catalog",element:T.jsx(JC,{})}),T.jsx(Qn,{path:"/favorites",element:T.jsx(ZC,{})})]}),T.jsx(Qn,{path:"*",element:T.jsx(qC,{})})]})})}const t_="/CV/assets/Inter-Bold-a1e8d028.otf",n_="/CV/assets/Inter-Medium-13aa9491.otf",r_="/CV/assets/Inter-Regular-546c3155.otf",o_=()=>Hv`
+`;const YC=()=>T.jsx(T.Fragment,{children:T.jsx(HC,{height:"100",width:"100",color:"#9ebbff",ariaLabel:"bars-loading",wrapperClass:"",visible:!0,wrapperStyle:{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%, -50%)"}})}),qC=R.lazy(()=>xl(()=>import("./ErrorPage-874103a0.js"),[])),XC=R.lazy(()=>xl(()=>import("./HomePage-688c105b.js"),[])),JC=R.lazy(()=>xl(()=>import("./CatalogPage-4dd131e8.js"),["assets/CatalogPage-4dd131e8.js","assets/Filters-c9f04ad2.js","assets/Filters-b8d97615.css"])),ZC=R.lazy(()=>xl(()=>import("./FavoritesPage-b80dad2f.js"),["assets/FavoritesPage-b80dad2f.js","assets/Filters-c9f04ad2.js","assets/Filters-b8d97615.css"]));function e_(){return T.jsx(R.Suspense,{fallback:T.jsx(YC,{}),children:T.jsxs(j1,{children:[T.jsxs(Qn,{path:"/",element:T.jsx(LC,{}),children:[T.jsx(Qn,{index:!0,element:T.jsx(XC,{})}),T.jsx(Qn,{path:"/catalog",element:T.jsx(JC,{})}),T.jsx(Qn,{path:"/favorites",element:T.jsx(ZC,{})})]}),T.jsx(Qn,{path:"*",element:T.jsx(qC,{})})]})})}const t_="/CV/assets/Inter-Bold-a1e8d028.otf",n_="/CV/assets/Inter-Medium-13aa9491.otf",r_="/CV/assets/Inter-Regular-546c3155.otf",o_=()=>Hv`
     :root {
       --button: #e44848;
       --main: #101828;
