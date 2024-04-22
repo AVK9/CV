@@ -1,11 +1,26 @@
-import { HeaderContainer, Navigation, StyledLink } from './Header.styled';
-
+import { Link } from 'react-router-dom';
+import {
+  Name,
+  NamePart,
+  BoxName,
+  HeaderContainer,
+  Navigation,
+  BoxLogo,
+} from './Header.styled';
+import logo from '../../assets/img/logo.svg';
 export const Header = () => {
   return (
     <HeaderContainer>
+      <BoxLogo>
+        <img src={logo} alt="Camper for you" />
+        <BoxName>
+          <Name>CAMPER</Name>
+          <NamePart>FOR YOU</NamePart>
+        </BoxName>
+      </BoxLogo>
       <Navigation>
-        <StyledLink to="/catalog">Catalog</StyledLink>
-        <StyledLink to="/favorites">Favorites</StyledLink>
+        <Link to="/catalog">Catalog</Link>
+        <Link to="/favorites">Favorites</Link>
       </Navigation>
     </HeaderContainer>
   );

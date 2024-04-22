@@ -5,12 +5,14 @@ import { Container } from './Layout.styled';
 
 const Layout = () => {
   return (
-    <Container>
+    <>
       <Header />
       <Suspense fallback={null}>
-        <Outlet />
+        <Container>
+          <Outlet />
+        </Container>
       </Suspense>
-    </Container>
+    </>
   );
 };
 
