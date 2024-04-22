@@ -1,11 +1,17 @@
-import { Container, Title, StyledImage } from './HomePage.styled';
+import {
+  FullWidthBackgroundAnimation,
+  BackgroundImage1,
+  BackgroundImage2,
+  BackgroundImage3,
+} from './HomePage.styled';
 
 const HomePage = () => {
   return (
-    <Container>
-      <Title>Home Page</Title>
-      {/* <StyledImage src={example} alt="Example" /> */}
-    </Container>
+    <FullWidthBackgroundAnimation>
+      <BackgroundImage1 />
+      <BackgroundImage2 />
+      <BackgroundImage3 />
+    </FullWidthBackgroundAnimation>
   );
 };
 

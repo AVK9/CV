@@ -2,17 +2,18 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
-  padding: 20px;
+  padding: 10px;
   background-color: #f7f7f7;
   box-shadow: 0 0 10px #8a8a8a;
   transition:
     color 0.3s,
     text-shadow 0.3s;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
   display: flex;
   gap: 250px;
   justify-content: center;
   align-items: center;
+  height: 100px;
 `;
 export const BoxLogo = styled.div`
   border-right: 2px solid black;
