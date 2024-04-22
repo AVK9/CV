@@ -1,16 +1,19 @@
-import { Container, FiltrBox } from './FavoritesPage.styled';
+import { Container, FiltrBox } from '../CatalogPage/CatalogPage.styled';
 import { AdvertListFavorites } from '../../components/AdvertListFavorites/AdvertListFavorites';
 import { LocationFiltr } from '../../components/Location/Location';
 import { Filters } from '../../components/Filters/Filters';
+import { Section } from '../../components/common/Section/Section';
 const FavoritesPage = () => {
   return (
-    <Container>
-      <FiltrBox>
-        <LocationFiltr />
-        <Filters />
-      </FiltrBox>
-      <AdvertListFavorites />
-    </Container>
+    <Section>
+      <Container>
+        <FiltrBox>
+          <LocationFiltr />
+          <Filters />
+        </FiltrBox>
+        <AdvertListFavorites />
+      </Container>
+    </Section>
   );
 };
 

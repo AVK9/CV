@@ -12,4 +12,5 @@ export const List = styled.ul`
   display: flex;
   gap: 24px;
   flex-direction: column;
+  align-items: center;
 `;
