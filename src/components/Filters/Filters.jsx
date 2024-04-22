@@ -42,7 +42,7 @@ export const Filters = () => {
     setEquipment((prevEquipment) => [...prevEquipment, e.target.value]);
 
     dispatch(equipmentAdvertsAction(e.target.value));
-    console.log('equipment', equipment);
+    console.log('equipment useState', equipment);
   };
 
   const clearInputFilter = (e) => {
@@ -85,10 +85,10 @@ export const Filters = () => {
             </IconGroupAvt>
             <RadioInput
               type="checkbox"
-              id="transmission"
+              id="automatic"
               name="options"
-              value="transmission"
-              checked={equipment.includes('transmission')}
+              value="automatic"
+              checked={equipment.includes('automatic')}
               onChange={equipmentInputFilter}
             />
             <RadioCustom />

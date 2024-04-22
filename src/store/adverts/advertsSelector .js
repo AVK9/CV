@@ -27,33 +27,17 @@ export const selectVisibleVehicleType = createSelector(
   }
 );
 
-// export const selectVisibleVehicleEquipment = createSelector(
-//   [selectVisibleVehicleType, selectEquipment],
-//   (adverts, filter) => {
-//     return filter.length > 0
-//       ? adverts.filter((advert) =>
-//           selectEquipment.every(
-//             (equipment) =>
-//               advert.details.airConditioner === equipment ||
-//               advert.details.kitchen === equipment ||
-//               advert.details.shower === equipment ||
-//               advert.details.transmission === equipment ||
-//               advert.details.petrol === equipment
-//           )
-//         )
-//       : adverts;
-//   }
-// );
-// export const selectVisibleVehicleEquipment = createSelector(
-//   [selectVisibleVehicleType, selectEquipment],
-//   (adverts, equipment) => {
-//     return equipment.length > 0
-//       ? adverts.filter((advert) =>
-//           equipment.every(
-//             (item) =>
-//               advert.details.hasOwnProperty(item) && advert.details[item] <= 1
-//           )
-//         )
-//       : adverts;
-//   }
-// );
+export const selectVisibleVehicleEquipment = createSelector(
+  [selectVisibleVehicleType, selectEquipment],
+  (adverts, equipment) => {
+    return equipment.length > 0
+      ? adverts.filter((advert) =>
+          equipment.every(
+            (equipmentItem) =>
+              advert.details[equipmentItem] !== 0 &&
+              advert.transmission === 'automatic'
+          )
+        )
+      : adverts;
+  }
+);
