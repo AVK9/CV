@@ -60,7 +60,20 @@ export const Modal = ({ onClose, data }) => {
     };
   }, []);
 
-  console.log(data);
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose]);
+
   return (
     <Backdrop onClick={handleBackdropClick}>
       <ModalW>
