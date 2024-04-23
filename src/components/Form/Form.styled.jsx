@@ -48,6 +48,11 @@ export const InputBoxComent = styled.div`
   background: var(--inputs);
   outline: none;
   border: none;
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
 `;
 export const InputBoxCalendar = styled.div`
   position: relative;
