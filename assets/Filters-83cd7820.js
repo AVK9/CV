@@ -1,4 +1,4 @@
-var po=Object.defineProperty;var fo=(n,r,t)=>r in n?po(n,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):n[r]=t;var M=(n,r,t)=>(fo(n,typeof r!="symbol"?r+"":r,t),t);import{n as K,j as f,r as D,R as m,u as k,d as ya,e as ho,f as mo,B as mn,a as en,b as go,i as yo,k as wo,l as vo,t as hr,m as bo}from"./index-de6d0735.js";function wa(n){var r,t,e="";if(typeof n=="string"||typeof n=="number")e+=n;else if(typeof n=="object")if(Array.isArray(n)){var a=n.length;for(r=0;r<a;r++)n[r]&&(t=wa(n[r]))&&(e&&(e+=" "),e+=t)}else for(t in n)n[t]&&(e&&(e+=" "),e+=t);return e}function G(){for(var n,r,t=0,e="",a=arguments.length;t<a;t++)(n=arguments[t])&&(r=wa(n))&&(e&&(e+=" "),e+=r);return e}const Yd=K.div`
+var po=Object.defineProperty;var fo=(n,r,t)=>r in n?po(n,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):n[r]=t;var M=(n,r,t)=>(fo(n,typeof r!="symbol"?r+"":r,t),t);import{n as K,j as f,r as D,R as m,u as k,e as ya,f as ho,i as mo,B as mn,a as en,b as go,k as yo,l as wo,m as vo,t as hr,o as bo}from"./index-dc778ef0.js";function wa(n){var r,t,e="";if(typeof n=="string"||typeof n=="number")e+=n;else if(typeof n=="object")if(Array.isArray(n)){var a=n.length;for(r=0;r<a;r++)n[r]&&(t=wa(n[r]))&&(e&&(e+=" "),e+=t)}else for(t in n)n[t]&&(e&&(e+=" "),e+=t);return e}function G(){for(var n,r,t=0,e="",a=arguments.length;t<a;t++)(n=arguments[t])&&(r=wa(n))&&(e&&(e+=" "),e+=r);return e}const Yd=K.div`
   margin-top: 32px;
   display: flex;
   flex-direction: column;
@@ -437,6 +437,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   background: var(--inputs);
   outline: none;
   border: none;
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
 `,ld=k.div`
   position: relative;
   border-radius: 10px;
