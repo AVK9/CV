@@ -10,9 +10,9 @@ import {
   selectVisibleVehicleEquipment,
 } from '../../store/adverts/advertsSelector ';
 import { AdvertListItem } from '../AdvertListItem/AdvertListItem';
-import { List, LoadMoreBtn } from './AdvertList.styled';
-
+import { List } from './AdvertList.styled';
 import { Loader } from '../Loader/Loader';
+import { Flex, Button } from '../common/Flex';
 
 export const AdvertList = () => {
   const dispatch = useDispatch();
@@ -49,7 +49,12 @@ export const AdvertList = () => {
           ))}
           {totalAdverts >= currentLengthPage &&
             totalAdverts !== currentLengthPage && (
-              <LoadMoreBtn onClick={clickLoadMore}>Load more</LoadMoreBtn>
+              // <LoadMoreBtn onClick={clickLoadMore}>Load more</LoadMoreBtn>
+              <Flex>
+                <Button className="load" onClick={clickLoadMore}>
+                  Load more
+                </Button>
+              </Flex>
             )}
         </List>
       ) : (

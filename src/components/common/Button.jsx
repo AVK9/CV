@@ -25,12 +25,12 @@ const StyledButton = styled.button`
   color: #fff;
 
   border-radius: 200px;
-  padding: 16px 60px;
-  width: 173px;
+  padding: 16px 40px;
+  width: 166px;
   height: 56px;
-  font-size: 22px;
 
-  background: var(--button);
+  margin: ${({ margin }) => margin || '20px 0px 0px 0px'};
+  background-color: ${({ theme }) => theme.colors.button};
 
   &:hover {
     background: #d84343;
@@ -46,11 +46,25 @@ const StyledButton = styled.button`
       color: ${(props) => props.color || 'white'};
       background: ${(props) => props.background || '#E44848'};
     `}
+
+  &.load {
+    border: 1px solid rgba(71, 84, 103, 0.2);
+    border-radius: 200px;
+    padding: 16px 32px;
+    width: 145px;
+    height: 56px;
+    background-color: ${({ theme }) => theme.colors.inputs};
+    color: #101828;
+
+    &:hover {
+      border: 1px solid var(--button);
+    }
+  }
 `;
 
-const LargeStyledButton = styled(StyledButton)`
-  font-size: 32px;
-`;
+// const LargeStyledButton = styled(StyledButton)`
+//   font-size: 32px;
+// `;
 
 export const Button = (props) => {
   return <StyledButton {...props} />;

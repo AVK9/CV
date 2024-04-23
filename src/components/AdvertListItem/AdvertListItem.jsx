@@ -17,9 +17,9 @@ import {
   BoxItem,
   TextItemLoc,
   Details,
-  Button,
   IconWrapperFavorite,
 } from './AdvertListItem.styled';
+import { Button } from '../../components/common/Button';
 import { Category } from '../common/Category/Category';
 import sprite from '../../assets/img/sprite.svg';
 import { Modal } from '../Modal/Modal';

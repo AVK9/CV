@@ -22,6 +22,7 @@ import {
   IconGroupKitch,
   IconGroupAvt,
 } from './Filters.styled';
+import { Button } from '../../components/common/Button';
 import sprite from '../../assets/img/sprite.svg';
 import {
   equipmentAdvertsAction,
@@ -202,7 +203,9 @@ export const Filters = () => {
             </RadioWrapper>
           </GroupFiltr>
         </SectionBox>
-        <ButtonReset onClick={clearInputFilter}> Reset</ButtonReset>
+        <Button margin="0" onClick={clearInputFilter}>
+          Reset
+        </Button>
       </FiltersBox>
     </form>
   );

@@ -11,7 +11,6 @@ const CatalogPage = () => {
     <Section>
       <Flex justify="center">
         <Title color={'#E44848'}>Catalog camper for rent </Title>
-        <Button>Show more</Button>
       </Flex>
       <Container>
         <FiltrBox>
