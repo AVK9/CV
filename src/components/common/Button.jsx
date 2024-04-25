@@ -30,34 +30,51 @@ const StyledButton = styled.button`
   height: 56px;
 
   margin: ${({ margin }) => margin || '20px 0px 0px 0px'};
-  background-color: ${({ theme }) => theme.colors.button};
+  color: ${(props) => props.color || 'white'};
+  background: ${(props) => props.background || '#E44848'};
+
+  transition:
+    background ${({ theme }) => theme.animation.cubicBezier},
+    box-shadow ${({ theme }) => theme.animation.cubicBezier};
 
   &:hover {
     background: #d84343;
     outline: none;
+    box-shadow: ${({ theme }) => theme.shadows.small};
+
     /* animation: ${rotateAnimation} 2s infinite linear; */
   }
 
   align-self: ${(props) => props.align || 'stretch'};
 
   ${(props) =>
-    props.primary &&
+    props.loadmore &&
     css`
-      color: ${(props) => props.color || 'white'};
-      background: ${(props) => props.background || '#E44848'};
+      border: 1px solid rgba(71, 84, 103, 0.2);
+      padding: 16px 32px;
+      width: 145px;
+      background-color: ${({ theme }) => theme.colors.inputs};
+      color: #101828;
+
+      &:hover {
+        border: 1px solid var(--button);
+        background: #f2f4f7;
+        outline: none;
+        transition: border ${({ theme }) => theme.animation.cubicBezier};
+      }
     `}
 
   &.load {
     border: 1px solid rgba(71, 84, 103, 0.2);
-    border-radius: 200px;
     padding: 16px 32px;
     width: 145px;
-    height: 56px;
     background-color: ${({ theme }) => theme.colors.inputs};
     color: #101828;
 
     &:hover {
       border: 1px solid var(--button);
+      background: #f2f4f7;
+      outline: none;
     }
   }
 `;

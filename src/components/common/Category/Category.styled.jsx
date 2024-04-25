@@ -20,13 +20,7 @@ export const CatBtn = styled.div`
   align-items: center;
   gap: 8px;
 `;
-export const IconWrapper = styled.svg`
-  width: ${(props) => props.size || '20px'};
-  height: ${(props) => props.size || '20px'};
-  stroke-width: 1.5px;
-  stroke: ${(props) => props.color || '#101828'};
-  fill: ${(props) => props.color || '#ffffff'};
-`;
+
 export const TextItem = styled.span`
   font-family: var(--font-family);
   font-weight: 500;

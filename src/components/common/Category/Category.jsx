@@ -1,5 +1,5 @@
-import { Wrapper, CatBtn, IconWrapper, TextItem } from './Category.styled';
-import sprite from '../../../assets/img/sprite.svg';
+import { Wrapper, CatBtn, TextItem } from './Category.styled';
+import { IconButton } from '../IconButton';
 
 export const Category = ({ details }) => {
   return (
@@ -9,9 +9,7 @@ export const Category = ({ details }) => {
           ''
         ) : (
           <CatBtn key={key}>
-            <IconWrapper>
-              <use href={`${sprite}#icon-${key}`} />
-            </IconWrapper>
+            <IconButton icon={key} />
             {details[key] === 1 ? '' : details[key]}
             <TextItem>{key}</TextItem>
           </CatBtn>

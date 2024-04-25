@@ -4,7 +4,6 @@ import { LocationFiltr } from '../../components/Location/Location';
 import { Filters } from '../../components/Filters/Filters';
 import { Section } from '../../components/common/Section/Section';
 import { Title, Flex } from '../../components';
-import { Button } from '../../components/common/Button';
 
 const CatalogPage = () => {
   return (

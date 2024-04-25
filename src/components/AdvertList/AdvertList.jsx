@@ -12,7 +12,7 @@ import {
 import { AdvertListItem } from '../AdvertListItem/AdvertListItem';
 import { List } from './AdvertList.styled';
 import { Loader } from '../Loader/Loader';
-import { Flex, Button } from '../common/Flex';
+import { Flex, Button } from '../../components';
 
 export const AdvertList = () => {
   const dispatch = useDispatch();
@@ -51,7 +51,11 @@ export const AdvertList = () => {
             totalAdverts !== currentLengthPage && (
               // <LoadMoreBtn onClick={clickLoadMore}>Load more</LoadMoreBtn>
               <Flex>
-                <Button className="load" onClick={clickLoadMore}>
+                <Button
+                  // className="load"
+                  loadmore
+                  onClick={clickLoadMore}
+                >
                   Load more
                 </Button>
               </Flex>

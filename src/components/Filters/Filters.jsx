@@ -11,7 +11,6 @@ import {
   IconWrappeAC,
   ButtonName,
   GroupFiltr,
-  ButtonReset,
   RadioWrapper,
   RadioInput,
   RadioCustom,
