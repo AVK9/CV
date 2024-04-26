@@ -1,13 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
   handleFulfilled,
+  handleGetPageAdverts,
   handlePending,
   handleRejected,
 } from './advertsHandlers';
 import { handleGetAdverts } from './advertsHandlers';
-import { getAdvertsThunk } from './advertsThunk';
+import { getAdvertsPageThunk, getAdvertsThunk } from './advertsThunk';
 const initialState = {
   adverts: [],
+  pageAnd: false,
   isLoading: false,
   error: '',
 };
@@ -17,7 +19,7 @@ const advertsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getAdvertsThunk.fulfilled, handleGetAdverts)
-      //   .addCase(addContactThunk.fulfilled, handleAddContact)
+      .addCase(getAdvertsPageThunk.fulfilled, handleGetPageAdverts)
       //   .addCase(delContactThunk.fulfilled, handleDelContact)
       .addMatcher(({ type }) => type.endsWith('/pendihg'), handlePending)
       .addMatcher(({ type }) => type.endsWith('/fulfilled'), handleFulfilled)

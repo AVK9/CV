@@ -2,7 +2,12 @@ import { api } from './api';
 
 export const getAllAdvertsApi = async () => {
   const { data } = await api('/adverts');
-  console.log(data);
+  return data;
+};
+
+export const getPageAdvertsApi = async (page) => {
+  const { data } = await api(`/adverts?page=${page}&limit=4`);
+  console.log('getPageAdvertsApi', data);
   return data;
 };
 

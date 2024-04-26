@@ -4,17 +4,18 @@ import { IconButton } from '../IconButton';
 export const Category = ({ details }) => {
   return (
     <Wrapper>
-      {Object.keys(details).map((key) =>
-        details[key] === 0 ? (
-          ''
-        ) : (
-          <CatBtn key={key}>
-            <IconButton icon={key} />
-            {details[key] === 1 ? '' : details[key]}
-            <TextItem>{key}</TextItem>
-          </CatBtn>
-        )
-      )}
+      {details &&
+        Object.keys(details).map((key) =>
+          details[key] === 0 ? (
+            ''
+          ) : (
+            <CatBtn key={key}>
+              <IconButton icon={key} />
+              {details[key] === 1 ? '' : details[key]}
+              <TextItem>{key}</TextItem>
+            </CatBtn>
+          )
+        )}
     </Wrapper>
   );
 };

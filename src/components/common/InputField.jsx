@@ -16,7 +16,7 @@ const InputBox = styled.div`
     props.comment &&
     css`
       height: 114px;
-      padding: 18px 18px 18px 90px;
+      padding: 18px 18px 18px 95px;
     `}
   ${(props) =>
     props.calendar &&

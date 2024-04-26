@@ -58,12 +58,12 @@ export const AdvertListItem = ({ data }) => {
   } = data;
   return (
     <Item>
-      <PrePhoto gallery={gallery[0]} />
+      {gallery && gallery.length > 0 && <PrePhoto gallery={gallery[0]} />}
       <PreInfo>
         <PreHead>
           <Name>{name}</Name>
           <PriceBox>
-            <Price>€ {price}.00</Price>
+            <Price>€ {price.toFixed(2)}</Price>
             <Favorite onClick={stateFavorite}>
               {isFavorite ? (
                 <IconWrapperFavorite color="var(--button)" size="24px">
@@ -86,7 +86,7 @@ export const AdvertListItem = ({ data }) => {
               <use href={`${sprite}#icon-star`} />
             </IconWrapper>
             <TextItem>
-              {rating}({reviews.length} Reviews)
+              {rating}({reviews && reviews.length} Reviews)
             </TextItem>
           </BoxItem>
           <BoxItem>

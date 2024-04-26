@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 // import { setTokenApi } from "services/authApi";
-import { getAllAdvertsApi } from '../../services/advertsApi';
+import { getAllAdvertsApi, getPageAdvertsApi } from '../../services/advertsApi';
 
 export const getAdvertsThunk = createAsyncThunk(
   'adverts/getAdverts',
@@ -12,6 +12,17 @@ export const getAdvertsThunk = createAsyncThunk(
     }
   }
 );
+export const getAdvertsPageThunk = createAsyncThunk(
+  'adverts/getAdvertsPage',
+  async (page, { rejectWithValue }) => {
+    try {
+      return await getPageAdvertsApi(page);
+    } catch (error) {
+      return rejectWithValue(error.response.data.error);
+    }
+  }
+);
+
 // export const addContactThunk = createAsyncThunk(
 //     'contacts/addContacts',
 //     async (contact, { rejectWithValue}) => {

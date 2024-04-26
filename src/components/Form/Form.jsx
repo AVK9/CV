@@ -104,7 +104,7 @@ export const Form = () => {
             comment
           />
         </InputBoxes>
-        <Button onClick={''}>Send</Button>
+        <Button>Send</Button>
       </Forma>
     </FormBox>
   );

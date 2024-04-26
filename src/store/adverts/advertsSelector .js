@@ -6,6 +6,7 @@ export const selectType = (state) => state.filter.type;
 export const selectEquipment = (state) => state.filter.equipment;
 export const selectLoading = (state) => state.adverts.isLoading;
 export const selectError = (state) => state.adverts.error;
+export const selectPageAnd = (state) => state.adverts.pageAnd;
 
 export const selectVisibleAdverts = createSelector(
   [selectStateAdverts, selectFilter],

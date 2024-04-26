@@ -17,6 +17,22 @@ export const handleGetAdverts = (state, { payload }) => {
   state.adverts = payload;
   console.log('handleGetAdverts :>> ', payload);
 };
+
+export const handleGetPageAdverts = (state, { payload }) => {
+  if (!payload.length) {
+    state.pageAnd = true;
+  }
+
+  if (state.adverts.length === 0) {
+    state.adverts = payload;
+  } else {
+    state.adverts = [...state.adverts, ...payload];
+    // state.adverts.push(payload);
+  }
+
+  console.log('handleGetPageAdverts :>> ', payload);
+};
+
 export const handleAddContact = (state, { payload }) => {
   console.log('handleAddContact :>> ', payload);
   state.contacts.push(payload);
