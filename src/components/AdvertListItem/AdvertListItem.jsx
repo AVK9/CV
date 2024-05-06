@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ReactDOM from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Item,
@@ -25,8 +26,14 @@ import sprite from '../../assets/img/sprite.svg';
 import { Modal } from '../Modal/Modal';
 import { selectFavorites } from '../../store/favorites/favoritesSelectors';
 import { addFavorite, delFavorite } from '../../store/favorites/favoritesSlice';
+import ModalPortal from '../Modal/ModalPortal';
 
 export const AdvertListItem = ({ data }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   // const [isData, setIsData] = useState({});
 
@@ -63,7 +70,7 @@ export const AdvertListItem = ({ data }) => {
         <PreHead>
           <Name>{name}</Name>
           <PriceBox>
-            <Price>€ {price.toFixed(2)}</Price>
+            <Price>€ {parseFloat(price).toFixed(2)}</Price>
             <Favorite onClick={stateFavorite}>
               {isFavorite ? (
                 <IconWrapperFavorite color="var(--button)" size="24px">
@@ -105,6 +112,17 @@ export const AdvertListItem = ({ data }) => {
         </Details>
 
         <Button onClick={handleOpenModal}>Show more</Button>
+        <div>
+          <Button type="button" onClick={openModal}>
+            Modal
+          </Button>
+          {ReactDOM.createPortal(
+            <ModalPortal isOpen={isOpen} onClose={closeModal}>
+              Зміст модалки
+            </ModalPortal>,
+            document.getElementById('modal-root')
+          )}
+        </div>
       </PreInfo>
       {isModalOpen && <Modal onClose={handleCloseModal} data={data} />}
     </Item>

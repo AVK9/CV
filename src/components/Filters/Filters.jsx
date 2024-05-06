@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   FiltersBox,
@@ -21,12 +21,15 @@ import {
   IconGroupKitch,
   IconGroupAvt,
 } from './Filters.styled';
-import { Button } from '../../components/common/Button';
+import { Button, LocationFiltr } from '../../components/';
 import sprite from '../../assets/img/sprite.svg';
 import {
   equipmentAdvertsAction,
   typeAdvertsAction,
 } from '../../store/adverts/sliceFilter';
+
+import ModalPortal from '../Modal/ModalPortal';
+
 export const Filters = () => {
   const dispatch = useDispatch();
   const [type, setType] = useState('');
@@ -202,7 +205,7 @@ export const Filters = () => {
             </RadioWrapper>
           </GroupFiltr>
         </SectionBox>
-        <Button margin="0" onClick={clearInputFilter}>
+        <Button type="reset" margin="0" onClick={clearInputFilter}>
           Reset
         </Button>
       </FiltersBox>

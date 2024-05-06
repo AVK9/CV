@@ -163,7 +163,7 @@ export const TabName = styled.div`
   font-size: 20px;
   line-height: 120%;
   color: var(--main);
-
+  cursor: pointer;
   /* &:focus,
   &:active {
     border-bottom: 4px solid #e44848;
