@@ -3,7 +3,7 @@ import { lazy, Suspense } from 'react';
 import Layout from 'components/Layout/Layout';
 
 import 'react-toastify/dist/ReactToastify.css';
-import { Loader } from './components/Loader/Loader';
+import { LoaderPercent } from './components/Loader/LoaderPercent';
 
 const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
@@ -12,7 +12,7 @@ const FavoritesPage = lazy(() => import('pages/FavoritesPage/FavoritesPage'));
 
 function App() {
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense fallback={<LoaderPercent />}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />

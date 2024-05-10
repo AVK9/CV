@@ -13,6 +13,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import { timeReduser } from './action/action';
 
 const persistConfig = {
   key: 'favorites',
@@ -27,6 +28,7 @@ export const store = configureStore({
     adverts: advertsReduser,
     filter: filterReduser,
     favorites: persistedReduser,
+    time: timeReduser,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

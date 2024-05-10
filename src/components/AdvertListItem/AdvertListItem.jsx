@@ -27,6 +27,7 @@ import { Modal } from '../Modal/Modal';
 import { selectFavorites } from '../../store/favorites/favoritesSelectors';
 import { addFavorite, delFavorite } from '../../store/favorites/favoritesSlice';
 import ModalPortal from '../Modal/ModalPortal';
+import { Flex } from '../common/Flex';
 
 export const AdvertListItem = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -110,19 +111,20 @@ export const AdvertListItem = ({ data }) => {
         <Details>
           <Category details={details} />
         </Details>
-
-        <Button onClick={handleOpenModal}>Show more</Button>
-        <div>
-          <Button type="button" onClick={openModal}>
-            Modal
-          </Button>
-          {ReactDOM.createPortal(
-            <ModalPortal isOpen={isOpen} onClose={closeModal}>
-              Зміст модалки
-            </ModalPortal>,
-            document.getElementById('modal-root')
-          )}
-        </div>
+        <Flex gap="20px">
+          <Button onClick={handleOpenModal}>Show more</Button>
+          <div>
+            <Button type="button" onClick={openModal}>
+              Modal
+            </Button>
+            {ReactDOM.createPortal(
+              <ModalPortal isOpen={isOpen} onClose={closeModal}>
+                Зміст модалки
+              </ModalPortal>,
+              document.getElementById('modal-root')
+            )}
+          </div>
+        </Flex>
       </PreInfo>
       {isModalOpen && <Modal onClose={handleCloseModal} data={data} />}
     </Item>

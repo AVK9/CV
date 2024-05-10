@@ -4,7 +4,8 @@ import { toast } from 'react-toastify';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FormBox, Name, Slogan, Forma, InputBoxes } from './Form.styled';
 import { Button } from '../common/Button';
-import { InputField } from '../../components';
+import { Calendar, InputField } from '../../components';
+import { useSelector } from 'react-redux';
 
 export const Form = () => {
   const [name, setName] = useState('');
@@ -13,6 +14,10 @@ export const Form = () => {
   const [nameValid, setNameValid] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
   const [startDate, setStartDate] = useState('');
+  const [showCalendar, setShowCalendar] = useState(false);
+
+  const openCalendar = () => setShowCalendar(true);
+  const closeCalendar = () => setShowCalendar(false);
 
   const nameRegex = /[а-яА-Яa-zA-Z]{3,}/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -50,6 +55,8 @@ export const Form = () => {
     );
   };
 
+  const clickDate = useSelector((state) => state.time.stateHandleDate);
+
   return (
     <FormBox>
       <Name>Book your campervan now</Name>
@@ -82,19 +89,22 @@ export const Form = () => {
             }}
             placeholder="ivan@gmail.com"
           />
+
           <InputField
             label="Booking date"
             type="text"
             name="calendar"
             // as={DatePicker}
             // dateFormat="dd/MM/yyyy"
-            // value={startDate}
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            value={clickDate}
+            // selected={calend}
+            // onChange={(date) => setStartDate(date)}
+            // onChange={openCalendar}
             icon="calendar"
             calendar
+            onClick={openCalendar}
           />
-          {/* <Calendar /> */}
+          {showCalendar && <Calendar onClose={closeCalendar} />}
           <InputField
             label="Comment"
             type="textarea"

@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import {
-  getAdvertsPageThunk,
-  getAdvertsThunk,
-} from '../../store/adverts/advertsThunk';
+import { getAdvertsPageThunk } from '../../store/adverts/advertsThunk';
 import {
   selectLoading,
   selectError,
@@ -45,11 +42,9 @@ export const AdvertList = () => {
   const clickLoadMore = () => {
     setPage(page + 1);
   };
-  console.log(page);
   return (
-    <>
+    <Flex direction="column">
       {loading && <Loader />}
-      {/* {loading && !error && <p>Loading pleasure wait</p>} */}
       {error && <p>Error: {error}</p>}
       {adverts && adverts.length > 0 && (
         <List>
@@ -58,10 +53,8 @@ export const AdvertList = () => {
           ))}
         </List>
       )}
-      {/* <Loader />
-      <p>No contacts to filter</p> */}
       {!pageAnd && adverts.length % 2 === 0 && (
-        <Flex>
+        <Flex justify="center">
           <Button
             // className="load"
             loadmore
@@ -71,6 +64,6 @@ export const AdvertList = () => {
           </Button>
         </Flex>
       )}
-    </>
+    </Flex>
   );
 };

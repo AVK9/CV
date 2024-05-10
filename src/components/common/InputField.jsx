@@ -75,7 +75,7 @@ export const InputField = (props) => {
     setActiveInput(null);
   };
 
-  const { type, label, inputId, icon } = props;
+  const { type, label, inputId, icon, onClick } = props;
   const Input = type === 'textarea' ? InputComment : InputInput;
   return (
     <InputBox {...props}>
@@ -86,6 +86,7 @@ export const InputField = (props) => {
         onBlur={handleBlur}
         type={type}
         required
+        onClick={onClick}
       />
       <IconBox>
         <IconButton icon={icon} />

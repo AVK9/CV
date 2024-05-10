@@ -53,18 +53,12 @@ export const CloseBtn = styled.div`
   justify-content: center;
   align-items: center;
 
-  &:hover {
+  &:hover,
+  &:active {
     background: rgba(21, 26, 29, 0.1);
     border-radius: 50%;
-    transition: background 0.3s ease;
-    transform: scale(0.85);
-    transition: transform 0.3s ease;
-    border: #101828 1px solid;
-  }
-
-  &:active {
-    transform: scale(1.45);
-    transition: transform 0.3s ease;
+    transition: background ${({ theme }) => theme.animation.cubicBezier};
+    box-shadow: ${({ theme }) => theme.shadows.small};
   }
 `;
 

@@ -21,7 +21,7 @@ import {
   IconGroupKitch,
   IconGroupAvt,
 } from './Filters.styled';
-import { Button, LocationFiltr } from '../../components/';
+import { Button } from '../../components/';
 import sprite from '../../assets/img/sprite.svg';
 import {
   equipmentAdvertsAction,

@@ -5,6 +5,7 @@ const StyledTitle = styled.h1`
   font-weight: 600;
   font-size: 30px;
   line-height: 125%;
+  margin-top: 40px;
   /* color: var(--main); */
   color: ${(props) => props.color};
 `;

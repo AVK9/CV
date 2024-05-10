@@ -33,9 +33,8 @@ const StyledButton = styled.button`
   color: ${(props) => props.color || 'white'};
   background: ${(props) => props.background || '#E44848'};
 
-  transition:
-    background ${({ theme }) => theme.animation.cubicBezier},
-    box-shadow ${({ theme }) => theme.animation.cubicBezier};
+  background-color: ${({ theme }) => theme.animation.cubicBezier};
+  box-shadow: ${({ theme }) => theme.shadows.small};
 
   &:hover {
     background: #d84343;
@@ -77,6 +76,23 @@ const StyledButton = styled.button`
       outline: none;
     }
   }
+
+  ${(props) =>
+    props.next &&
+    css`
+      padding: 0;
+      margin: 0;
+      width: 24px;
+      height: 24px;
+      background-color: transparent;
+      box-shadow: none;
+
+      &:hover {
+        background-color: transparent;
+        outline: none;
+        box-shadow: none;
+      }
+    `}
 `;
 
 // const LargeStyledButton = styled(StyledButton)`

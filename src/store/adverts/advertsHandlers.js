@@ -1,6 +1,6 @@
 export const handlePending = (state) => {
   state.isLoading = true;
-  console.log('isLoadingisLoading');
+  console.log('isLoadingisLoading', 2222);
   state.error = '';
 };
 export const handleFulfilled = (state) => {
