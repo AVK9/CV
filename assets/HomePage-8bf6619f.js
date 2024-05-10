@@ -1,47 +1,47 @@
-import{h as o,u as i,j as t}from"./index-27a024d1.js";const a="/CV/assets/3-51df8639.png",n="/CV/assets/1-6d7913ac.png",s="/CV/assets/6-363b835c.png",e=o`
+import{h as a,u as t,b as o,j as i}from"./index-f7074bc4.js";const n="/CV/assets/1-6d7913ac.png",s="/CV/assets/6-363b835c.png",e=a`
   0%, 100% {
     opacity: 0;
   }
   10%, 90% {
     opacity: 1;
   }
-`,c=o`
+`,c=a`
   0%, 100% {
     opacity: 0;
   }
   20%, 80% {
     opacity: 1;
   }
-`,g=o`
+`,r=a`
   0%, 100% {
     opacity: 0;
   }
   30%, 70% {
     opacity: 1;
   }
-`,r=i.div`
+`,g=t.div`
   width: 100vw;
   height: 100vh;
   position: relative;
-`,d=i.div`
-  background-image: url(${a});
+`,d=t.div`
+  background-image: url(${o});
   background-size: cover;
   width: 100%;
   height: 100%;
   position: absolute;
   animation: ${e} 12s infinite;
-`,u=i.div`
+`,u=t.div`
   background-image: url(${n});
   background-size: cover;
   width: 100%;
   height: 100%;
   position: absolute;
   animation: ${c} 12s infinite;
-`,h=i.div`
+`,h=t.div`
   background-image: url(${s});
   background-size: cover;
   width: 100%;
   height: 100%;
   position: absolute;
-  animation: ${g} 12s infinite;
-`,m=()=>t.jsxs(r,{children:[t.jsx(d,{}),t.jsx(u,{}),t.jsx(h,{})]});export{m as default};
+  animation: ${r} 12s infinite;
+`,b=()=>i.jsxs(g,{children:[i.jsx(d,{}),i.jsx(u,{}),i.jsx(h,{})]});export{b as default};
