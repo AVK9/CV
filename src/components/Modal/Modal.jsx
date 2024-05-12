@@ -30,6 +30,7 @@ import { Category } from '../common/Category/Category';
 import { VehicleDetails } from '../VehicleDetails/VehicleDetails';
 import { Reviews } from '../Reviews/Reviews';
 import { Form } from '../Form/Form';
+import { updateStateHandleDate } from '../../store/action/action';
 
 export const Modal = ({ onClose, data }) => {
   const [activeTab, setActiveTab] = useState(1);
@@ -49,6 +50,7 @@ export const Modal = ({ onClose, data }) => {
   const handleBackdropClick = (event) => {
     if (event.currentTarget === event.target) {
       handleClose();
+      dispatch(updateStateHandleDate(''));
     }
   };
 
@@ -64,6 +66,7 @@ export const Modal = ({ onClose, data }) => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
         onClose();
+        dispatch(updateStateHandleDate(''));
       }
     };
 
@@ -72,7 +75,7 @@ export const Modal = ({ onClose, data }) => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onClose]);
+  }, [dispatch, onClose]);
 
   return (
     <Backdrop onClick={handleBackdropClick}>

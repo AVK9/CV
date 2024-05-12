@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+
 import {
   CalendarBox,
   CalendarTab,
@@ -59,8 +61,18 @@ export const Calendar = ({ onClose }) => {
   });
 
   const selectDay = (date) => {
-    const selectDateUseFormat = dateFns.format(date, 'd/MM/yyyy');
-    dispatch(updateStateHandleDate(selectDateUseFormat));
+    const selectedDate = dateFns.format(date, 'd/MM/yyyy');
+    const todayFormat = dateFns.format(today, 'd/MM/yyyy');
+
+    if (selectedDate === todayFormat) {
+      dispatch(updateStateHandleDate(selectedDate));
+      toast.warn('You have chosen the current day, you need to hurry');
+    } else if (date > today) {
+      dispatch(updateStateHandleDate(selectedDate));
+    } else {
+      toast.warn('The date has already passed');
+      dispatch(updateStateHandleDate(''));
+    }
   };
 
   const handleClose = () => {
